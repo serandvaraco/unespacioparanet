@@ -32,13 +32,15 @@
             this.btnGetQueue = new System.Windows.Forms.Button();
             this.btnUpdateQueue = new System.Windows.Forms.Button();
             this.lstResults = new System.Windows.Forms.ListBox();
+            this.btnRemove = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSendQueue
             // 
-            this.btnSendQueue.Location = new System.Drawing.Point(13, 13);
+            this.btnSendQueue.Location = new System.Drawing.Point(17, 16);
+            this.btnSendQueue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSendQueue.Name = "btnSendQueue";
-            this.btnSendQueue.Size = new System.Drawing.Size(75, 23);
+            this.btnSendQueue.Size = new System.Drawing.Size(100, 28);
             this.btnSendQueue.TabIndex = 0;
             this.btnSendQueue.Text = "Send";
             this.btnSendQueue.UseVisualStyleBackColor = true;
@@ -46,9 +48,10 @@
             // 
             // btnGetQueue
             // 
-            this.btnGetQueue.Location = new System.Drawing.Point(95, 12);
+            this.btnGetQueue.Location = new System.Drawing.Point(127, 15);
+            this.btnGetQueue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGetQueue.Name = "btnGetQueue";
-            this.btnGetQueue.Size = new System.Drawing.Size(75, 23);
+            this.btnGetQueue.Size = new System.Drawing.Size(100, 28);
             this.btnGetQueue.TabIndex = 1;
             this.btnGetQueue.Text = "Get";
             this.btnGetQueue.UseVisualStyleBackColor = true;
@@ -56,9 +59,10 @@
             // 
             // btnUpdateQueue
             // 
-            this.btnUpdateQueue.Location = new System.Drawing.Point(176, 12);
+            this.btnUpdateQueue.Location = new System.Drawing.Point(235, 15);
+            this.btnUpdateQueue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUpdateQueue.Name = "btnUpdateQueue";
-            this.btnUpdateQueue.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdateQueue.Size = new System.Drawing.Size(100, 28);
             this.btnUpdateQueue.TabIndex = 2;
             this.btnUpdateQueue.Text = "Update";
             this.btnUpdateQueue.UseVisualStyleBackColor = true;
@@ -67,20 +71,35 @@
             // lstResults
             // 
             this.lstResults.FormattingEnabled = true;
-            this.lstResults.Location = new System.Drawing.Point(13, 43);
+            this.lstResults.ItemHeight = 16;
+            this.lstResults.Location = new System.Drawing.Point(17, 53);
+            this.lstResults.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lstResults.Name = "lstResults";
-            this.lstResults.Size = new System.Drawing.Size(238, 199);
+            this.lstResults.Size = new System.Drawing.Size(426, 244);
             this.lstResults.TabIndex = 3;
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.Location = new System.Drawing.Point(343, 16);
+            this.btnRemove.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(100, 28);
+            this.btnRemove.TabIndex = 4;
+            this.btnRemove.Text = "Remove";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // QueueForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(258, 250);
+            this.ClientSize = new System.Drawing.Size(455, 308);
+            this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.lstResults);
             this.Controls.Add(this.btnUpdateQueue);
             this.Controls.Add(this.btnGetQueue);
             this.Controls.Add(this.btnSendQueue);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "QueueForm";
             this.Text = "QueueForm";
             this.ResumeLayout(false);
@@ -93,5 +112,6 @@
         private System.Windows.Forms.Button btnGetQueue;
         private System.Windows.Forms.Button btnUpdateQueue;
         private System.Windows.Forms.ListBox lstResults;
+        private System.Windows.Forms.Button btnRemove;
     }
 }

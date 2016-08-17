@@ -42,5 +42,10 @@ namespace AzureStorage
             queueStorage.UpdateMessage("Updated!!!");
 
         }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            queueStorage.DeleteMessage(); 
+        }
     }
 }
