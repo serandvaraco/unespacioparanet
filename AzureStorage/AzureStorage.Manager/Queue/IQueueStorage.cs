@@ -9,5 +9,6 @@ namespace AzureStorage.Manager.Queue
         void SetQueueName(string queueName);
         void SendMessage(string message);
         void UpdateMessage(string newMessge);
+        void DeleteQueue(); 
     }
 }

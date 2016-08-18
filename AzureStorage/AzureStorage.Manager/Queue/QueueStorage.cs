@@ -6,8 +6,7 @@ namespace AzureStorage.Manager.Queue
 {
     public class QueueStorage : IQueueStorage
     {
-        CloudStorageAccount _storageAccount =
-         StorageAccount.CreateStorageAccount();
+        CloudStorageAccount _storageAccount = StorageAccount.CreateStorageAccount();
 
         CloudQueueClient queueClient;
         CloudQueue queue;
@@ -54,6 +53,11 @@ namespace AzureStorage.Manager.Queue
         {
             CloudQueueMessage retrievedMessage = queue.GetMessage();
             queue.DeleteMessage(retrievedMessage);
+        }
+
+        public void DeleteQueue()
+        {
+            queue.Delete(); 
         }
     }
 }

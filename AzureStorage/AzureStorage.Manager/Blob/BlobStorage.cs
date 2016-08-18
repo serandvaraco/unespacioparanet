@@ -1,5 +1,6 @@
 ﻿using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Blob;
+using System;
 using System.IO;
 
 namespace AzureStorage.Manager.Blob
@@ -45,6 +46,34 @@ namespace AzureStorage.Manager.Blob
             {
                 blockBlob.UploadFromStream(fileStream);
             }
+        }
+
+        public string GetPoliciesPermission(string namePolicy) {
+
+            var policy = new SharedAccessBlobPolicy()
+            {
+                Permissions = SharedAccessBlobPermissions.Read,
+                SharedAccessExpiryTime = DateTime.UtcNow + TimeSpan.FromMinutes(5)
+            };
+
+            var containerPermissions = new BlobContainerPermissions();
+            containerPermissions.SharedAccessPolicies.Add(namePolicy, policy);
+            container.SetPermissions(containerPermissions);
+            return container.GetSharedAccessSignature(new SharedAccessBlobPolicy(),
+                namePolicy);
+
+
+        }
+
+        public string SetPoliciesPermission(string namePermission) {
+
+            var policy = new SharedAccessBlobPolicy()
+            {
+                Permissions = SharedAccessBlobPermissions.Read,
+                SharedAccessExpiryTime = DateTime.UtcNow + TimeSpan.FromMinutes(5)
+            };
+            return container.GetSharedAccessSignature(policy);
+                       
         }
 
         public MemoryStream GetFile(string blobReference)

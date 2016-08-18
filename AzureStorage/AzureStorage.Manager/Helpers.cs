@@ -9,7 +9,5 @@ namespace AzureStorage.Manager
     public class Helpers
     {
 
-
-
     }
 }
