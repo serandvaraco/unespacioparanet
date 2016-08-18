@@ -13,7 +13,7 @@ namespace AzureStorage
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new QueueForm());
+            Application.Run(new blobForm());
         }
     }
 }

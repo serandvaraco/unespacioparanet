@@ -48,7 +48,8 @@ namespace AzureStorage.Manager.Blob
             }
         }
 
-        public string GetPoliciesPermission(string namePolicy) {
+        public string GetPoliciesPermission(string namePolicy)
+        {
 
             var policy = new SharedAccessBlobPolicy()
             {
@@ -65,7 +66,8 @@ namespace AzureStorage.Manager.Blob
 
         }
 
-        public string SetPoliciesPermission(string namePermission) {
+        public string SetPoliciesPermission(string namePermission)
+        {
 
             var policy = new SharedAccessBlobPolicy()
             {
@@ -73,19 +75,17 @@ namespace AzureStorage.Manager.Blob
                 SharedAccessExpiryTime = DateTime.UtcNow + TimeSpan.FromMinutes(5)
             };
             return container.GetSharedAccessSignature(policy);
-                       
+
         }
 
         public MemoryStream GetFile(string blobReference)
         {
             CloudBlockBlob blockBlob =
                container.GetBlockBlobReference(blobReference);
-            MemoryStream memoryStream;
+            
 
-            using (memoryStream = new MemoryStream())
-            {
-                blockBlob.DownloadToStream(memoryStream);
-            }
+            var memoryStream = new MemoryStream();
+            blockBlob.DownloadToStream(memoryStream);
 
             return memoryStream;
         }

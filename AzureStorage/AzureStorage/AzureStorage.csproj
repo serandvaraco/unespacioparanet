@@ -48,7 +48,19 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="blobForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="blobForm.Designer.cs">
+      <DependentUpon>blobForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="QueueForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +104,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="BlobForm.resx">
+      <DependentUpon>blobForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="QueueForm.resx">
       <DependentUpon>QueueForm.cs</DependentUpon>
     </EmbeddedResource>
