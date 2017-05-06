@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="voice_recognition_prompt">xxx</string>
-  <string name="speak_button">Hablar</string>
-  <string name="supported_languages">Lenguajes Soportados</string>
-  <string name="language_preference">Lenguaje preferido</string>
-
-  <string name="ApplicationName">VoiceRecognition</string>
-</resources>
