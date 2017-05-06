@@ -1,6 +1,6 @@
 
 
-### Puedes ver el paso a pase de este proyecto en los siguientes enlaces. 
+### Puedes ver el paso a paso de este proyecto en los siguientes enlaces. 
 
 ### Blog
 
