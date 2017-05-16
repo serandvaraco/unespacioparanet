@@ -1,4 +1,6 @@
 ﻿using FacRepositoriesContainer.Models;
+using System.Collections;
+using System.Collections.Generic;
 using System.Web.Mvc;
 
 namespace FacRepositoriesContainer.Controllers
@@ -15,7 +17,29 @@ namespace FacRepositoriesContainer.Controllers
         [HttpPost]
         public JsonResult Index()
         {
-            return Json(((IRepository)_uowRep.Project).GetAll());
+            IEnumerable<dynamic> projects = new[] {
+
+                ((IRepository)_uowRep.Project).GetAll(),
+                ((IRepository)_uowRep.Project).GetAll(),
+                ((IRepository)_uowRep.Project).GetAll(),
+                ((IRepository)_uowRep.Project).GetAll(),
+                ((IRepository)_uowRep.Project).GetAll(),
+                ((IRepository)_uowRep.Project).GetAll(),
+                ((IRepository)_uowRep.Project).GetAll(),
+                ((IRepository)_uowRep.Project).GetAll(),
+                ((IRepository)_uowRep.Project).GetAll(),
+                ((IRepository)_uowRep.Project).GetAll(),
+                ((IRepository)_uowRep.Project).GetAll(),
+                ((IRepository)_uowRep.Project).GetAll(),
+                ((IRepository)_uowRep.Project).GetAll(),
+                ((IRepository)_uowRep.Project).GetAll(),
+                ((IRepository)_uowRep.Project).GetAll(),
+                ((IRepository)_uowRep.Project).GetAll(),
+                ((IRepository)_uowRep.Project).GetAll(),
+                ((IRepository)_uowRep.Project).GetAll(),
+
+            };
+            return Json(projects);
         }
     }
 }

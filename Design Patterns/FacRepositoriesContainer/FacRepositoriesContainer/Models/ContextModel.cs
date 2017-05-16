@@ -1,8 +1,7 @@
 ﻿using Dapper;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Threading.Tasks;
-
+using System.Linq;
 namespace FacRepositoriesContainer.Models
 {
     public class ContextModel : IContextModel
@@ -32,9 +31,9 @@ namespace FacRepositoriesContainer.Models
         IEnumerable<dynamic> IContextModel.ExecuteQuery(string query, object parameters)
         {
             if (_transaction != null)
-                return _transaction.Connection.Query(query, parameters);
+                return _transaction.Connection.Query(query, parameters).Select(x => DapperExtension.DictionaryToObject(x)); ;
 
-            return _cn.Query(query, parameters);
+            return _cn.Query(query, parameters).Select(x => DapperExtension.DictionaryToObject(x));
         }
 
         private void Open()

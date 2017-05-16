@@ -22,10 +22,8 @@ namespace FacRepositoriesContainer
             builder.RegisterControllers(typeof(MvcApplication).Assembly);
             builder.RegisterFilterProvider();
 
-            builder.RegisterType<ContextModel>().As<IContextModel>(); 
-                
-
-            builder.RegisterType<uowRep>().As<IuowRep>();
+            builder.RegisterType<ContextModel>().As<IContextModel>().InstancePerDependency().SingleInstance();
+            builder.RegisterType<uowRep>().As<IuowRep>().InstancePerDependency().SingleInstance(); ;
 
 
             var container = builder.Build();
