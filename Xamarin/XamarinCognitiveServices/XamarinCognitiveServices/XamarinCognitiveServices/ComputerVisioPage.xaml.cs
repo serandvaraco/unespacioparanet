@@ -9,14 +9,14 @@ using Xamarin.Forms;
 
 namespace XamarinCognitiveServices
 {
-	public partial class ComputerVisioPage : ContentPage
-	{
-		public ComputerVisioPage ()
-		{
-			InitializeComponent ();
-		}
+    public partial class ComputerVisioPage : ContentPage
+    {
+        public ComputerVisioPage()
+        {
+            InitializeComponent();
+        }
 
-        Stream streamCopy; 
+        Stream streamCopy;
         async void btnPhoto_Clicked(object sender, EventArgs e)
         {
             var useCamera = ((Button)sender).Text.Contains("cámara");
@@ -40,7 +40,7 @@ namespace XamarinCognitiveServices
             {
                 streamCopy.Seek(0, SeekOrigin.Begin);
                 var vision = await APIServices.GetAnalisysComputerVisio(streamCopy);
-
+                if (vision == null) return;
                 var adulto = vision.Adult;
                 lblAdult.Text = String.Format("Contenido Adulto: {0} ({1})", adulto.IsAdultContent, adulto.AdultScore.ToString("P4"));
                 lblRacist.Text = String.Format("Contenido Racista: {0} ({1})", adulto.IsRacyContent, adulto.RacyScore.ToString("P4"));
