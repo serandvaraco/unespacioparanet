@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PerformanceTricks.Binding.BindingPage">
+    <ContentPage.Content>
+
+        <!--Time Elapsed: 206-->
+        <!--
+        <StackLayout>
+            <Label x:Name="lblText"  />
+        </StackLayout>
+        -->
+        <!--Time Elapsed: 194-->
+        <StackLayout>
+            <Label Text="{Binding Welcome}"  />
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

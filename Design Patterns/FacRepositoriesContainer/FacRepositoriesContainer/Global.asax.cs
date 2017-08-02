@@ -11,7 +11,7 @@ using System.Web.Routing;
 
 namespace FacRepositoriesContainer
 {
-    public class MvcApplication : System.Web.HttpApplication
+    public class Global : System.Web.HttpApplication
     {
         protected void Application_Start()
         {
@@ -19,7 +19,7 @@ namespace FacRepositoriesContainer
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 
             var builder = new ContainerBuilder();
-            builder.RegisterControllers(typeof(MvcApplication).Assembly);
+            builder.RegisterControllers(typeof(Global).Assembly);
             builder.RegisterFilterProvider();
 
             builder.RegisterType<ContextModel>().As<IContextModel>().InstancePerDependency().SingleInstance();

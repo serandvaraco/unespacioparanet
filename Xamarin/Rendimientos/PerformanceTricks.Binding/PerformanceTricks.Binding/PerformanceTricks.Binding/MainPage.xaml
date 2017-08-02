@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PerformanceTricks.Binding"
+             x:Class="PerformanceTricks.Binding.MainPage">
+
+    
+    <!-- Elapsed Time 349 ms
+    <StackLayout>
+        <Label Text="{Binding Value1}"  />
+        <Label Text="{Binding Value2}"  />
+        <Label Text="{Binding Value3}"  />
+        <Label Text="{Binding Value4}"  />
+        <Label Text="{Binding Value5}"  />
+        <Label Text="{Binding Value6}"  />
+        <Label Text="{Binding Value7}"  />
+        <Label Text="{Binding Value8}"  />
+        <Label Text="{Binding Value9}"  />
+        <Label Text="{Binding Value10}"  />
+        <Label Text="{Binding Value11}"  />
+        <Label Text="{Binding Value12}"  />
+        <Label Text="{Binding Value13}"  />
+        <Label Text="{Binding Value14}"  />
+        <Label Text="{Binding Value15}"  />
+        <Label Text="{Binding Value16}"  />
+        <Label Text="{Binding Value17}"  />
+        <Label Text="{Binding Value18}"  />
+        <Label Text="{Binding Value19}"  />
+        <Label Text="{Binding Value20}"  />
+        <Label Text="{Binding Value21}"  />
+        <Label Text="{Binding Value22}"  />
+        <Label Text="{Binding Value23}"  />
+        <Label Text="{Binding Value24}"  />
+        <Label Text="{Binding Value25}"  />
+        <Label Text="{Binding Value26}"  />
+        <Label Text="{Binding Value27}"  />
+        <Label Text="{Binding Value28}"  />
+        <Label Text="{Binding Value29}"  />
+        <Label Text="{Binding Value30}"  />
+        <Label Text="{Binding Value31}"  />
+        <Label Text="{Binding Value32}"  />
+    </StackLayout>
+    -->
+
+    <!-- Elapsed Time : 351 -->
+    <StackLayout>
+        <Label Text="Hello World Without Binding!"  />
+        <Label Text="Hello World Without Binding!"  />
+        <Label Text="Hello World Without Binding!"  />
+        <Label Text="Hello World Without Binding!"  />
+        <Label Text="Hello World Without Binding!"  />
+        <Label Text="Hello World Without Binding!"  />
+        <Label Text="Hello World Without Binding!"  />
+        <Label Text="Hello World Without Binding!"  />
+        <Label Text="Hello World Without Binding!"  />
+        <Label Text="Hello World Without Binding!"  />
+        <Label Text="Hello World Without Binding!"  />
+        <Label Text="Hello World Without Binding!"  />
+        <Label Text="Hello World Without Binding!"  />
+        <Label Text="Hello World Without Binding!"  />
+        <Label Text="Hello World Without Binding!"  />
+        <Label Text="Hello World Without Binding!"  />
+        <Label Text="Hello World Without Binding!"  />
+        <Label Text="Hello World Without Binding!"  />
+        <Label Text="Hello World Without Binding!"  />
+        <Label Text="Hello World Without Binding!"  />
+        <Label Text="Hello World Without Binding!"  />
+        <Label Text="Hello World Without Binding!"  />
+        <Label Text="Hello World Without Binding!"  />
+        <Label Text="Hello World Without Binding!"  />
+        <Label Text="Hello World Without Binding!"  />
+        <Label Text="Hello World Without Binding!"  />
+        <Label Text="Hello World Without Binding!"  />
+        <Label Text="Hello World Without Binding!"  />
+        <Label Text="Hello World Without Binding!"  />
+        <Label Text="Hello World Without Binding!"  />
+        <Label Text="Hello World Without Binding!"  />
+        <Label Text="Hello World Without Binding!"  />
+    </StackLayout>
+
+</ContentPage>
