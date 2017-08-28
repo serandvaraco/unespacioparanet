@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div>@ViewBag.Msg</div>
+
+@using (Html.BeginForm("Create", "Home"))
+{
+    @Html.AntiForgeryToken();
+    @Html.EditorForModel();
+    <input type="submit" value="submit" />
+
+}
