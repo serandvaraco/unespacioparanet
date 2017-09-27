@@ -6,6 +6,9 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Microsoft.Azure.Mobile;
+using Microsoft.Azure.Mobile.Analytics;
+using Microsoft.Azure.Mobile.Crashes;
 
 namespace IA.Droid
 {
@@ -20,7 +23,8 @@ namespace IA.Droid
 			base.OnCreate (bundle);
 
 			global::Xamarin.Forms.Forms.Init (this, bundle);
-			LoadApplication (new IA.App ());
+            MobileCenter.Start("a2a80cd2-52ff-4446-b3df-6be6366a3b5e",typeof(Analytics), typeof(Crashes));
+            LoadApplication (new IA.App ());
 		}
 	}
 }
