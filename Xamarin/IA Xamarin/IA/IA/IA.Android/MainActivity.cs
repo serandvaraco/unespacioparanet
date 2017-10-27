@@ -6,9 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
-using Microsoft.Azure.Mobile;
-using Microsoft.Azure.Mobile.Analytics;
-using Microsoft.Azure.Mobile.Crashes;
+using Plugin.Permissions;
 
 namespace IA.Droid
 {
@@ -23,9 +21,14 @@ namespace IA.Droid
 			base.OnCreate (bundle);
 
 			global::Xamarin.Forms.Forms.Init (this, bundle);
-            MobileCenter.Start("a2a80cd2-52ff-4446-b3df-6be6366a3b5e",typeof(Analytics), typeof(Crashes));
+    
             LoadApplication (new IA.App ());
 		}
-	}
+
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
+        {
+            PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+    }
 }
 

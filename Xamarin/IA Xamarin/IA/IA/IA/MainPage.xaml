@@ -4,8 +4,13 @@
              xmlns:local="clr-namespace:IA"
              x:Class="IA.MainPage">
 
-	<Label Text="Welcome to Xamarin Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
+    <StackLayout VerticalOptions="FillAndExpand">
+        <ProgressBar x:Name="progressBar" IsVisible="False"></ProgressBar>
+        <Image x:Name="imgPhoto" WidthRequest="150" HeightRequest="150" Aspect="AspectFit"/>
+        <Button x:Name="btnCamera" Text="Usar cámara" Clicked="btnCamera_Clicked"/>
+        <Button x:Name="btnStartEmotion" Text="Analizar imagen Emocion" Clicked="btnStart_Clicked"/>
+        <Button x:Name="btnStartVision" Text="Analizar imagen Vision" Clicked="btnStartVision_Clicked"/>
+        <Label x:Name="lblResults" VerticalOptions="Fill" HorizontalOptions="Fill"  ></Label>
+    </StackLayout>
 
 </ContentPage>
