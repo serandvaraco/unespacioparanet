@@ -11,12 +11,13 @@ namespace XamarinFaceApiIdentification
 {
     class Program
     {
-        FaceServiceClient faceServiceClient = new FaceServiceClient("cecb2840aa6e4a3e85ec2a5f543bc474", "https://eastus.api.cognitive.microsoft.com/face/v1.0");
+        FaceServiceClient faceServiceClient = new FaceServiceClient("e673746d753d4db6940d0d58f98e4a27", "https://eastus.api.cognitive.microsoft.com/face/v1.0");
 
         public async Task CreatePersonGroup(string personGroupId, string personGroupName)
         {
             try
             {
+               // await faceServiceClient.DeletePersonGroupAsync(personGroupId);
                 await faceServiceClient.CreatePersonGroupAsync(personGroupId, personGroupName);
             }
             catch (Exception ex)
@@ -117,7 +118,7 @@ namespace XamarinFaceApiIdentification
                 await Task.Delay(1000);
             }
 
-            Console.WriteLine("TRaining AI completed");
+            Console.WriteLine($"Training AI {trainingStatus.Status.ToString()} {trainingStatus.Message}");
         }
 
         static async void Evaluate()
@@ -125,13 +126,21 @@ namespace XamarinFaceApiIdentification
 
             //
             var p = new Program();
+
+
+            foreach (var item in await p.faceServiceClient.ListPersonGroupsAsync())
+            {
+                Console.WriteLine(item.Name);
+
+            }
+
+
+
+            //await new Program().CreatePersonGroup("bigview", "employees");
             /*
-              new Program().CreatePersonGroup("serandvaraco", "Hollywood Star");
-              await p.AddPersonToGroup("serandvaraco", "Tom Cruise", @"C:\Git\unespacioparanet\Xamarin\IA Xamarin Conference\Demos\CognitiveService\Xamarin Face Identity\Images\TomCruise\")
+                await p.AddPersonToGroup("serandvaraco",
+                  "Tom Cruise", @"C:\Git\unespacioparanet\Xamarin\IA Xamarin Conference\Demos\CognitiveService\Xamarin Face Identity\Images\TomCruise\")
                 .ContinueWith(async (x) =>
-                {
-                    await p.AddPersonToGroup("serandvaraco", "Natalie Rushman", @"C:\Git\unespacioparanet\Xamarin\IA Xamarin Conference\Demos\CognitiveService\Xamarin Face Identity\Images\Natalie Rushman\");
-                }).ContinueWith(async (x) =>
                 {
                     await p.AddPersonToGroup("serandvaraco", "Robert Downey Jr", @"C:\Git\unespacioparanet\Xamarin\IA Xamarin Conference\Demos\CognitiveService\Xamarin Face Identity\Images\Robert\");
                 }).ContinueWith(async (x) =>
@@ -142,13 +151,19 @@ namespace XamarinFaceApiIdentification
                     await p.TrainingAI("serandvaraco");
                 });
             */
-           // await p.AddPersonToGroup("serandvaraco", "Sergio A Vargas", @"C:\Git\unespacioparanet\Xamarin\IA Xamarin Conference\Demos\CognitiveService\Xamarin Face Identity\Images\SergioVargas\"); 
-            string testImageFile = @"C:\Git\unespacioparanet\Xamarin\IA Xamarin Conference\Demos\CognitiveService\Xamarin Face Identity\Images\SergioVargas\Sergio1.jpg";
-            await p.TrainingAI("serandvaraco").ContinueWith(async (x) =>
-            {
-                await p.RecognitionFace("serandvaraco", testImageFile);
-            });
 
+
+          
+
+           
+
+            string testImageFile = @"C:\Git\unespacioparanet\IA\Xam\Demos\CS\FaceIdentify\Images\SergioVargas\Sergio.jpg";
+
+           // await p.AddPersonToGroup("bigview", "Scarlett Johansson", @"C:\Git\unespacioparanet\IA\Xam\Demos\CS\FaceIdentify\Images\scarlett johansson\");
+           // await p.AddPersonToGroup("bigview", "Sergio A Vargas", @"C:\Git\unespacioparanet\IA\Xam\Demos\CS\FaceIdentify\Images\SergioVargas\");
+           // await p.TrainingAI("bigview");
+            await p.RecognitionFace("bigview", testImageFile);
+            
         }
 
         static void Main(string[] args)

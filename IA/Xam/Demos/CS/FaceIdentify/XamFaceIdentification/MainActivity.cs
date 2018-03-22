@@ -18,11 +18,11 @@ using Android.Runtime;
 
 namespace XamFaceIdentification
 {
-    [Activity(Label = "XamFaceIdentification", MainLauncher = true)]
+    [Activity(Label = "Reconocer Rostros", MainLauncher = true)]
     public class MainActivity : Activity
     {
-        private FaceServiceRestClient faceServiceRestClient = new FaceServiceRestClient("https://eastus.api.cognitive.microsoft.com/face/v1.0", "cecb2840aa6e4a3e85ec2a5f543bc474");
-        private string personGroupId = "serandvaraco";
+        private FaceServiceRestClient faceServiceRestClient = new FaceServiceRestClient("https://eastus.api.cognitive.microsoft.com/face/v1.0", "e673746d753d4db6940d0d58f98e4a27");
+        private string personGroupId = "bigview";
         ImageView imageView;
         Bitmap mBitmap;
         Button btnDetect, btnIdentify, btnTake;
@@ -35,7 +35,7 @@ namespace XamFaceIdentification
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Main);
 
-            mBitmap = BitmapFactory.DecodeResource(Resources, Resource.Drawable.Sergio);
+            mBitmap = BitmapFactory.DecodeResource(Resources, Resource.Drawable.scarlet);
             imageView = FindViewById<ImageView>(Resource.Id.imageView);
             imageView.SetImageBitmap(mBitmap);
 
@@ -131,6 +131,8 @@ namespace XamFaceIdentification
             protected override void OnPostExecute(string result)
             {
                 mDialog.Dismiss();
+              
+
                 var identifyList = JsonConvert.DeserializeObject<List<IdentifyResultModel>>(result);
                 foreach (var identify in identifyList)
                 {

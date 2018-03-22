@@ -82,7 +82,7 @@ namespace AzureStorage.Manager.Blob
         {
             CloudBlockBlob blockBlob =
                container.GetBlockBlobReference(blobReference);
-            
+
 
             var memoryStream = new MemoryStream();
             blockBlob.DownloadToStream(memoryStream);
